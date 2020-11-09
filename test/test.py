@@ -11,13 +11,13 @@ BASE = "http://127.0.0.1:5000/"
 #     response = requests.put(BASE + "video/" + str(i), data[i])
 #     print(response.json())
 
-#response = requests.get(BASE + "helloworld/kindsr")
-#response = requests.put(BASE + "video/3", {"likes": 10, "name": "kindsr", "views": 10000000})
-#print(response.json())
+# response = requests.get(BASE + "helloworld/kindsr")
+# response = requests.put(BASE + "video/3", {"likes": 10, "name": "kindsr", "views": 10000000})
+# print(response.json())
 
-#input()
-#response = requests.delete(BASE + "video/0")
-#print(response)
+# input()
+# response = requests.delete(BASE + "video/0")
+# print(response)
 
 # input()
 response = requests.get(BASE + "video/1")
