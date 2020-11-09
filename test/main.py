@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 class VideoModel(db.Model):
@@ -97,14 +98,14 @@ class Video(Resource):
         if not result:
             abort(404, message="Video doesn't exist, cannot update")
 
-        if "name" in args:
+        # if "name" in args: #and args['name'] not None:
+        if args['name']:
             VideoModel.name = args['name']
-        if "views" in args:
+        if args['views']:
             VideoModel.views = args['views']
-        if "likes" in args:
+        if args['likes']:
             VideoModel.likes = args['likes']
 
-        db.session.add(result)
         db.session.commit()
 
         return result

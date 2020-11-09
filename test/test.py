@@ -20,8 +20,8 @@ BASE = "http://127.0.0.1:5000/"
 #print(response)
 
 # input()
-# response = requests.get(BASE + "video/6")
-# print(response.json())
+response = requests.get(BASE + "video/1")
+print(response.json())
 
-response = requests.patch(BASE + "video/2", {"views":99})
+response = requests.patch(BASE + "video/1", {"views": 99})
 print(response.json())
